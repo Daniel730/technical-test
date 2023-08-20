@@ -1,4 +1,5 @@
 require("./bootstrap");
 
-// ADD this line
-require("./components/Router");
+$(document).ready(function () {
+    require("./navbar");
+});

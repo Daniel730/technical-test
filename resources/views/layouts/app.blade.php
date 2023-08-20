@@ -1,9 +1,12 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
+<html class="h-full bg-gray-800" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>React Laravel</title>
+        <!-- CSRF Token -->
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+        <title>Technical Test</title>
         <!-- use Tailwind CSS -->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
         <!-- Using Google Fonts -->
@@ -13,9 +16,19 @@
         {{-- Add Styles --}}
         <link  href="{{ asset('css/app.css') }}" rel="stylesheet">
     </head>
-    <body class="body-bg min-h-screen pt-12 md:pt-20 pb-6 px-2 md:px-0">
-      <div id="root"></div>
+    <body class="h-full">
+        <div id="root">
+            @guest
+            @else
+                @include('layouts.navbar')
+            @endguest
+
+            <main class="py-4">
+                @yield('content')
+            </main>
+        </div>
     </body>
     <!-- Call our app script -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
 </html>
