@@ -92,3 +92,8 @@ composer install --ignore-platform-reqs
     -   Turbines (GET)
     -   Filter routes (GET)
     -   Inspections: Create, Update, Delete (POST)
+ 
+## Starter Figma Simple Design
+![Desktop - 1](https://github.com/Daniel730/technical-test/assets/36681072/ac7f7f9d-79bf-4201-94b9-c6a70ac33960)
+![iPhone 14 - 1](https://github.com/Daniel730/technical-test/assets/36681072/851c7b27-553f-4ed7-a4a4-9f38cd53d5fe)
+
