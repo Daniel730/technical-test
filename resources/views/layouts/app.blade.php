@@ -23,7 +23,7 @@
                 @include('layouts.navbar')
             @endguest
 
-            <main class="py-4">
+            <main class="grid justify-items-center">
                 @yield('content')
             </main>
         </div>
