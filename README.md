@@ -99,6 +99,6 @@ composer install --ignore-platform-reqs
 ![iPhone 14 - 1](https://github.com/Daniel730/technical-test/assets/36681072/851c7b27-553f-4ed7-a4a4-9f38cd53d5fe)
 
 ## Database Structure
-![diagram drawio](https://github.com/Daniel730/technical-test/assets/36681072/0e8e0dff-0c02-4080-96b3-6afdcffb88e1)
+![diagram drawio (1)](https://github.com/Daniel730/technical-test/assets/36681072/6c266d56-dada-440b-99f1-ab72a9213902)
 
 
