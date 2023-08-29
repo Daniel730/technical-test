@@ -1,25 +1,39 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="w-2/5">
-        <div class="sm:mx-auto sm:w-full sm:max-w-sm grid justify-items-center">
-            <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-white">Your Inspections</h2>
+    <div class="w-full px-4">
+        <div class="sm:mx-auto p-4 sm:w-full sm:max-w-sm grid justify-items-center">
+            <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-white">Your Turbines</h2>
         </div>
 
-        <ul role="list" class="divide-y divide-gray-100">
-            <li class="flex justify-between gap-x-6 py-5">
-                <div class="flex min-w-0 gap-x-4">
-                    <img class="h-12 w-12 flex-none rounded-full bg-gray-50" src="https://cdn-icons-png.flaticon.com/512/1946/1946166.png" alt="">
-                    <div class="min-w-0 flex-auto">
-                        <p class="text-sm font-semibold leading-6 text-white">Turbine Name</p>
-                        <p class="mt-1 truncate text-xs leading-5 text-white">Farm Name</p>
+        <div class="grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
+            <!-- Columns -->
+            <div class="flex flex-col justify-between px-1 items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+                <div class="flex flex-col justify-between p-1 leading-normal w-full">
+                    <div class="flex flex-row justify-between">
+                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Turbine 1</h5>
+                        <a href="{{ route('edit-turbine', ['id' => 1]) }}" class="text-yellow-400 hover:text-white border border-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center mr-2 mb-2 dark:border-yellow-300 dark:text-yellow-300 dark:hover:text-white dark:hover:bg-yellow-400 dark:focus:ring-yellow-900">
+                            Edit
+                        </a>
+                        <a href="{{ route('new-inspection') }}" class="text-green-700 hover:text-white border border-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center mr-2 mb-2 dark:border-green-500 dark:text-green-500 dark:hover:text-white dark:hover:bg-green-600 dark:focus:ring-green-800">
+                            New Inspection
+                        </a>
+                    </div>
+                    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Lat: 212121</p>
+                    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Lon: 21121212</p>
+                    <div class="flex flex-col">
+                        <div class="flex flex-row">
+                            <span class="bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300">Blade: 3</span>
+                            <span class="bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300">HUB: 3</span>
+                            <span class="bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300">Generator: 3</span>
+                            <span class="bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300">Rotor: 3</span>
+                        </div>
+                        <div class="flex flex-row">
+                            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Last Inspection: 03-07-2023</p>
+                        </div>
                     </div>
                 </div>
-                <div class="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
-                    <p class="text-sm leading-6 text-white">Nº of components damaged</p>
-                    <p class="mt-1 text-xs leading-5 text-white">Inspection date: </p>
-                </div>
-            </li>
-        </ul>
+            </div>
+        </div>
     </div>
 @endsection

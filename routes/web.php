@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,5 +14,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/{path?}', 'app')
-    ->where('path', '.*');
+Route::group(['middleware' => 'web'], function () {
+    Route::get('/', [HomeController::class, 'index']);
+
+    Auth::routes();
+
+    Route::controller(HomeController::class)->group(function () {
+        Route::get('/home', 'index')->name('home');
+        Route::get('/turbine/{id}', 'index')->name('turbine');
+        Route::get('/turbine/edit/{id}', 'index')->name('edit-turbine');
+        Route::get('/turbine/new', 'index')->name('new-turbine');
+        Route::get('/inspection/new', 'index')->name('new-inspection');
+    });
+});
