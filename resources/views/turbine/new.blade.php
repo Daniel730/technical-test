@@ -6,7 +6,7 @@
             <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-white">New Turbine</h2>
         </div>
 
-        <form>
+        <form class="mt-10 sm:mx-auto p-4 sm:w-full sm:max-w-sm grid justify-items-center">
             <div class="grid md:grid-cols-2 md:gap-6">
                 <div class="relative z-0 w-full mb-6 group">
                     <input type="number" step="0.01" name="latitude" id="latitude" class="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder="" required />
