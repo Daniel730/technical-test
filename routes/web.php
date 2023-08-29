@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\InspectionController;
+use App\Http\Controllers\TurbineController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,11 +21,18 @@ Route::group(['middleware' => 'web'], function () {
 
     Auth::routes();
 
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
+
     Route::controller(HomeController::class)->group(function () {
-        Route::get('/home', 'index')->name('home');
-        Route::get('/turbine/{id}', 'index')->name('turbine');
-        Route::get('/turbine/edit/{id}', 'index')->name('edit-turbine');
-        Route::get('/turbine/new', 'index')->name('new-turbine');
         Route::get('/inspection/new', 'index')->name('new-inspection');
     });
+
+    Route::controller(TurbineController::class)->group(function () {
+        Route::get('/turbine/{id}/edit', 'edit')->name('edit-turbine');
+        Route::get('/turbine/new', 'new')->name('new-turbine');
+    });
+
+    Route::controller(InspectionController::class)->group(function () {
+        Route::get('/inspection/new', 'new')->name('new-inspection');
+    })
 });
