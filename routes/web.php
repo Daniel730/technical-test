@@ -34,5 +34,5 @@ Route::group(['middleware' => 'web'], function () {
 
     Route::controller(InspectionController::class)->group(function () {
         Route::get('/inspection/new', 'new')->name('new-inspection');
-    })
+    });
 });
