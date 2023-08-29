@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\InspectionController;
 use App\Http\Controllers\TurbineController;
 use Illuminate\Support\Facades\Route;
 
@@ -27,8 +28,11 @@ Route::group(['middleware' => 'web'], function () {
     });
 
     Route::controller(TurbineController::class)->group(function () {
-        Route::get('/turbine/{id}/show', 'index')->name('turbine');
         Route::get('/turbine/{id}/edit', 'edit')->name('edit-turbine');
         Route::get('/turbine/new', 'new')->name('new-turbine');
     });
+
+    Route::controller(InspectionController::class)->group(function () {
+        Route::get('/inspection/new', 'new')->name('new-inspection');
+    })
 });

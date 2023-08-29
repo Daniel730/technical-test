@@ -19,11 +19,6 @@ class TurbineController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index(int $id)
-    {
-        echo $id;
-        return view('turbine.index');
-    }
 
     public function edit()
     {
