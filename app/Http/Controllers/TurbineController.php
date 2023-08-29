@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Turbine;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
+
 class TurbineController extends Controller
 {
     /**
@@ -28,5 +32,21 @@ class TurbineController extends Controller
     public function new()
     {
         return view('turbine.new');
+    }
+
+    function store(Request $req): RedirectResponse
+    {
+        $turbine = new Turbine;
+
+        $turbine->location = serialize([
+            'latitude' => $req->input('latitude'),
+            'longitude' => $req->input('longitude')
+        ]);
+
+        $turbine->user_id = auth()->user()->id;
+
+        $turbine->save();
+
+        return redirect('home');
     }
 }
