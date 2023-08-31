@@ -34,7 +34,7 @@ class TurbineController extends Controller
         return view('turbine.new');
     }
 
-    function store(Request $req): RedirectResponse
+    function store(Request $req)
     {
         $turbine = new Turbine;
 

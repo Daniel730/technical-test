@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('inspections', function (Blueprint $table) {
             $table->id();
-            $table->enum('grades', [1, 2, 3, 4, 5])->comment('1 being perfect and 5 being completely broken/missing');
+            $table->enum('grade', [1, 2, 3, 4, 5])->comment('1 being perfect and 5 being completely broken/missing');
             $table->unsignedBigInteger('turbine_id');
             $table->unsignedBigInteger('component_id');
             $table->timestamps();
