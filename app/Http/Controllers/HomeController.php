@@ -23,8 +23,13 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $turbines = Turbine::with('inspection')
+            ->join('inspections', 'inspections.turbine_id', 'turbines.id')
+            ->orderBy('inspections.updated_at', "DESC")
+            ->get();
+
         return view('home', [
-            'turbines' => Turbine::get()
+            'turbines' => $turbines
         ]);
     }
 }

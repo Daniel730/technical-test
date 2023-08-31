@@ -23,13 +23,12 @@
                         <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Lon: {{ unserialize($turbine->location)['longitude'] }}</p>
                         <div class="flex flex-col">
                             <div class="flex flex-row">
-                                <span class="bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300">Blade: 3</span>
-                                <span class="bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300">HUB: 3</span>
-                                <span class="bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300">Generator: 3</span>
-                                <span class="bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300">Rotor: 3</span>
+                                @foreach ($turbine->inspection as $inspection)
+                                    <span class="bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300">{{ $inspection->component->name }}: {{ $inspection->grade }}</span>
+                                @endforeach
                             </div>
                             <div class="flex flex-row">
-                                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Last Inspection: 03-07-2023</p>
+                                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{ _("Last Update: " . $turbine->inspection()->first()->updated_at) }}</p>
                             </div>
                         </div>
                     </div>

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Inspection extends Model
 {
@@ -18,4 +19,9 @@ class Inspection extends Model
     ];
 
     public $timestamps = true;
+
+    public function component(): HasOne
+    {
+        return $this->hasOne(Component::class, 'id', 'component_id');
+    }
 }
