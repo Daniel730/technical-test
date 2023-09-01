@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Turbine;
+
 class HomeController extends Controller
 {
     /**
@@ -21,6 +23,14 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $turbines = Turbine::with('inspection');
+
+        return view('home', [
+            'turbines' => $turbines->get(),
+            'lastUpdate' => $turbines->first()
+                ->inspection()
+                ->first()
+                ->updated_at
+        ]);
     }
 }

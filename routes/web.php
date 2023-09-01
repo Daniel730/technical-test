@@ -23,16 +23,15 @@ Route::group(['middleware' => 'web'], function () {
 
     Route::get('/home', [HomeController::class, 'index'])->name('home');
 
-    Route::controller(HomeController::class)->group(function () {
-        Route::get('/inspection/new', 'index')->name('new-inspection');
-    });
-
     Route::controller(TurbineController::class)->group(function () {
         Route::get('/turbine/{id}/edit', 'edit')->name('edit-turbine');
         Route::get('/turbine/new', 'new')->name('new-turbine');
+        Route::post('/turbine/new', 'store')->name('store-turbine');
+        Route::put('/turbine/update', 'update')->name('update-turbine');
     });
 
     Route::controller(InspectionController::class)->group(function () {
-        Route::get('/inspection/new', 'new')->name('new-inspection');
+        Route::get('/inspection/{turbine_id}/new', 'new')->name('new-inspection');
+        Route::post('/inspection/new', 'store')->name('store-inspection');
     });
 });

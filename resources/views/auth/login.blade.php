@@ -9,7 +9,6 @@
         <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
             <form action="{{ route('login') }}" class="space-y-6" method="POST">
                 @csrf
-
                 <div>
                     <label for="email" class="block text-sm font-medium leading-6 text-white">{{ __('E-Mail') }}</label>
                     <div class="mt-2">
@@ -28,9 +27,6 @@
                 <div>
                     <div class="flex items-center justify-between">
                         <label for="password" class="block text-sm font-medium leading-6 text-white">{{ __('Password') }}</label>
-                        <div class="text-sm">
-                            <a href="#" class="font-semibold text-indigo-600 hover:text-indigo-500">{{ __('Forgot your password?') }}</a>
-                        </div>
                     </div>
                     <div class="mt-2">
                         <input id="password" name="password" type="password" autocomplete="current-password" required class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
