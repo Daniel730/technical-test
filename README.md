@@ -78,9 +78,9 @@ composer install --ignore-platform-reqs
 
 ## Your Notes
 
--     I was going to implement a map as well, but since the project is already taking longer than I expected I decided not to do so
--     The project itself wasn't hard. I just took some time to do it because I had to take care of a few personal things so I was working on it for maximum like 2h a day
--     I was going to do a few extra implementations at the project, but the main demand has been fullfiled, so I'll add the extras by myself later on.
+- I was going to implement a map as well, but since the project is already taking longer than I expected I decided not to do so
+- The project itself wasn't hard. I just took some time to do it because I had to take care of a few personal things so I was working on it for maximum like 2h a day
+- I was going to do a few extra implementations at the project, but the main demand has been fullfiled, so I'll add the extras by myself later on.
  
 ## Starter Figma Simple Design
 ![Desktop - 1](https://github.com/Daniel730/technical-test/assets/36681072/ac7f7f9d-79bf-4201-94b9-c6a70ac33960)
