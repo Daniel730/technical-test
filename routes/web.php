@@ -27,6 +27,7 @@ Route::group(['middleware' => 'web'], function () {
         Route::get('/turbine/{id}/edit', 'edit')->name('edit-turbine');
         Route::get('/turbine/new', 'new')->name('new-turbine');
         Route::post('/turbine/new', 'store')->name('store-turbine');
+        Route::put('/turbine/update', 'update')->name('update-turbine');
     });
 
     Route::controller(InspectionController::class)->group(function () {

@@ -28,7 +28,7 @@
                                 @endforeach
                             </div>
                             <div class="flex flex-row">
-                                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{ _("Last Update: " . $turbine->inspection()->first()->updated_at) }}</p>
+                                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{ _("Last Update: ".$lastUpdate) }}</p>
                             </div>
                         </div>
                     </div>

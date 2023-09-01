@@ -35,7 +35,7 @@ class InspectionController extends Controller
         );
     }
 
-    function store(Request $req)
+    public function store(Request $req)
     {
         $componentIds = $req->input('component_ids');
         $grades = $req->input('grades');

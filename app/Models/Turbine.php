@@ -5,7 +5,6 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Illuminate\Database\Eloquent\Relations\HasOneThrough;
 
 class Turbine extends Model
 {
@@ -20,7 +19,7 @@ class Turbine extends Model
 
     public $timestamps = true;
 
-    function inspection(): HasMany
+    public function inspection(): HasMany
     {
         return $this->hasMany(Inspection::class);
     }
